@@ -1,13 +1,125 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-black {
+  background: #222;
+  color: white;
+  /* text-transform: uppercase; */
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  padding: 7px 14px;
+  font-weight: 500;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.596);
+  transition: .3s all;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .btn-black:hover {
+  color: black;
+} */
+
+.btn-black::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: #333;
+  transition: .3s all;
+  z-index: -1;
+}
+
+.btn-black:hover::before {
+  width: 100%;
+}
+
+.btn-white {
+  background: transparent;
+  color: black;
+  font-weight: 500;
+  /* text-transform: uppercase; */
+  border-radius: 3px;
+  border: 1px solid #555;
+  padding: 7px 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.365);
+  transition: .3s all;
+  position: relative;
+  z-index: 2;
+}
+
+/* .btn-white:hover {
+  color: white;
+} */
+
+.btn-white::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: rgba(185, 185, 185, 0.284);
+  transition: .3s all;
+  z-index: -1;
+}
+
+.btn-white:hover::before {
+  width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.slick-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.testimonials {
+  background-image: url("/public/images/hero/bg1.jpg");
+  /* opacity: 0.2; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.testimonials::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffffaa;
+  z-index: -1;
 }
